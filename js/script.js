@@ -1,13 +1,17 @@
-const buttonText = document.querySelector('button-text');
-buttonText.addEventListener('click', palindromeFun);
-const firstCard = document.getElementbyID('first-card');
+/*
+PALINDROMA
+Chiedere all’utente di inserire una parola
+Creare una funzione per capire se la parola inserita è palindroma
+*/
 
-function palindromeFun(str) {
-	let string = document.querySelector('input').value;
-	let value = palindromeFun(string);
+const btnText = document.querySelector('.button-text');
+btnText.addEventListener('click', palindrome);
+const firstCard = document.getElementById('first-card');
 
+function palindrome(str) {
+	const string = document.getElementById('text').value;
 	let arrValue = string.split('');
-	let reveArrVal = arrValue.reverse('');
+	let reveArrVal = arrValue.reverse();
 	let revString = reveArrVal.join('');
 
 	if (string == revString) {
@@ -16,6 +20,3 @@ function palindromeFun(str) {
 		firstCard.innerHTML += `<h1>Non è un palindromo</h1>`;
 	}
 }
-
-const btnGame = document.querySelector('.button-game');
-btnEmail.addEventListener('click', checkGame);
